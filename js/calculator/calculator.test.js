@@ -15,3 +15,24 @@ test('subtract 5 - 4 to equal 1', () => {
 test('subtract -5 - -10 to equal 5', () => {
   expect(calculator.subtract(-5, -10)).toBe(5);
 });
+const { divide, multiply } = require("./calculator");
+
+describe("divide function", () => {
+  test("dividing by 0 returns a warning", () => {
+    expect(divide(10, 0)).toBe("No se puede dividir entre 0");
+  });
+
+  test("normal division works", () => {
+    expect(divide(10, 2)).toBe(5);
+  });
+});
+
+describe("multiply function", () => {
+  test("2 * 3 = 6", () => {
+    expect(multiply(2, 3)).toBe(6);
+  });
+
+  test("-2 * 3 = -6", () => {
+    expect(multiply(-2, 3)).toBe(-6);
+  });
+});
